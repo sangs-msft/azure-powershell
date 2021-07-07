@@ -19,19 +19,19 @@ while(-not $mockingPath) {
 
 Describe 'New-AzDnsResolverOutboundEndpoint' {
     It 'Create outbound endpoint with a DNS resolver' {
-        $outboundEndpoint = New-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverName0 -Name $env.OutboundEndpoint01 -ResourceGroupName $env.ResourceGroupName -SubscriptionId $env.SubscriptionId -SubnetId $env.SubnetId
+        $outboundEndpoint = New-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverName0 -Name $env.OutboundEndpointName1 -ResourceGroupName $env.ResourceGroupName -SubscriptionId $env.SubscriptionId -SubnetId $env.SubnetId
         $outboundEndpoint | Should -BeSuccessfullyCreatedOutboundEndpoint
         $outboundEndpoint.SubnetId | Should -Be $env.SubnetId 
     }
 
     It 'Create outbound endpoint with non existent DNS resolver' {
         $nonExistantResolverName = = RandomString -allChars $false -len 6
-         {New-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverName0 -Name $env.OutboundEndpoint01 -ResourceGroupName $env.ResourceGroupName -SubscriptionId $env.SubscriptionId -SubnetId $env.SubnetId }| Should -Throw 'Unparseable resource ID'
+         {New-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverName0 -Name $env.OutboundEndpointName1 -ResourceGroupName $env.ResourceGroupName -SubscriptionId $env.SubscriptionId -SubnetId $env.SubnetId }| Should -Throw 'Unparseable resource ID'
     }
 
     It 'Create outbound endpoint IfNoneMatch wildcard, expect outbound endpoint created' {
         $tag = GetRandomHashtable -size 5
-        $resolver = New-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverName0 -Name $env.OutboundEndpoint01 -ResourceGroupName $env.ResourceGroupName -SubscriptionId $env.SubscriptionId -SubnetId $env.SubnetId -Tag $tag -IfNoneMatch *
+        $resolver = New-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverName0 -Name $env.OutboundEndpointName1 -ResourceGroupName $env.ResourceGroupName -SubscriptionId $env.SubscriptionId -SubnetId $env.SubnetId -Tag $tag -IfNoneMatch *
         $resolver.ProvisioningState | Should -Be $env.SuccessProvisioningState
     }
 }

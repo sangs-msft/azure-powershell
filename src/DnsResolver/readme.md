@@ -70,7 +70,7 @@ In this directory, run AutoRest:
 > see https://aka.ms/autorest
 
 ``` yaml
-branch: ffebe2759a66ebd6ca52288a9eaf1c02f28e3842
+branch: Microsoft.Network-dnsresolver-2020-01-01-previews
 require:
   - $(this-folder)/../readme.azure.noprofile.md
 input-file:
