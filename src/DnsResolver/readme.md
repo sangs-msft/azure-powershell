@@ -70,13 +70,12 @@ In this directory, run AutoRest:
 > see https://aka.ms/autorest
 
 ``` yaml
-branch: Microsoft.Network-dnsresolver-2020-01-01-previews
 require:
   - $(this-folder)/../readme.azure.noprofile.md
 input-file:
   - D:\SpecRepo\azure-rest-api-specs-pr\specification\dnsresolver\resource-manager\Microsoft.Network\preview\2020-04-01-preview\dnsresolver.json
 
-module-version: 0.1.0
+module-version: 0.1.4
 title: DnsResolver
 subject-prefix: $(service-name)
 
@@ -86,6 +85,17 @@ inlining-threshold: 50
 # identity-correction-for-post: true
 
 directive:
+  - where:
+      subject: ForwardingRule|VirtualNetworkLink
+    set:
+      subject-prefix: DnsForwardingRuleset
+  - where:
+      subject: DnsForwardingRuleset
+    set:
+      subject-prefix: ''
+  - where:
+      subject: DnsForwardingRulesetDnsForwardingRuleset
+    remove: true
   # Following is two common directive which are normally required in all the RPs
   # 1. Remove the unexpanded parameter set
   # 2. For New-* cmdlets, ViaIdentity is not required, so CreateViaIdentityExpanded is removed as well

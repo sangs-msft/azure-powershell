@@ -1,53 +1,58 @@
 ---
 external help file:
 Module Name: Az.DnsResolver
-online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/update-azdnsresolveroutboundendpoint
+online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/update-azdnsforwardingrulesetvirtualnetworklink
 schema: 2.0.0
 ---
 
-# Update-AzDnsResolverOutboundEndpoint
+# Update-AzDnsForwardingRulesetVirtualNetworkLink
 
 ## SYNOPSIS
-Updates an outbound endpoint for a DNS resolver.
+Updates a virtual network link to a DNS forwarding ruleset.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-AzDnsResolverOutboundEndpoint -DnsResolverName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-IfMatch <String>] [-Metadata <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzDnsForwardingRulesetVirtualNetworkLink -DnsForwardingRulesetName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-IfMatch <String>] [-Metadata <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzDnsResolverOutboundEndpoint -InputObject <IDnsResolverIdentity> [-IfMatch <String>]
+Update-AzDnsForwardingRulesetVirtualNetworkLink -InputObject <IDnsResolverIdentity> [-IfMatch <String>]
  [-Metadata <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates an outbound endpoint for a DNS resolver.
+Updates a virtual network link to a DNS forwarding ruleset.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Update virtual network link by name (adding metadata)
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Update-AzDnsForwardingRulesetVirtualNetworkLink -DnsForwardingRulesetName sampleDnsForwardingRuleset -Name sampleVnetLink -Metadata @{"value0" = "value1"}
 
-{{ Add output here }}
+Name         Type                                             Etag
+----         ----                                             ----
+sampleVnetLink Microsoft.Network/dnsForwardingRuleset/virtualNetworkLinks "02001eab-0000-0800-0000-60e792500000"
 ```
 
-{{ Add description here }}
+This command updates virtual network link by name (adding metadata)
 
-### Example 2: {{ Add title here }}
+### Example 2: Update virtual network link via identity (adding metadata)
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> $inputObject = Get-AzDnsForwardingRulesetVirtualNetworkLink -DnsResolverName pstestdnsresolvername -Name samplevnetLink1 -ResourceGroupName powershell-test-rg
+PS C:\> Update-AzDnsForwardingRulesetVirtualNetworkLink -InputObject $inputObject -Metadata @{"value0" = "value1"}
 
-{{ Add output here }}
+Name         Type                                             Etag
+----         ----                                             ----
+sampleVnetLink Microsoft.Network/dnsForwardingRuleset/virtualNetworkLinks "02001eab-0000-0800-0000-60e792500000"
 ```
 
-{{ Add description here }}
+This command updates virtual network link via identity (adding metadata)
 
 ## PARAMETERS
 
@@ -81,8 +86,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DnsResolverName
-The name of the DNS resolver.
+### -DnsForwardingRulesetName
+The name of the DNS forwarding ruleset.
 
 ```yaml
 Type: System.String
@@ -130,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Metadata
-Metadata attached to the outbound endpoint.
+Metadata attached to the virtual network link.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -145,12 +150,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the outbound endpoint for the DNS resolver.
+The name of the virtual network link.
 
 ```yaml
 Type: System.String
 Parameter Sets: UpdateExpanded
-Aliases: OutboundEndpointName
+Aliases: VirtualNetworkLinkName
 
 Required: True
 Position: Named
@@ -245,7 +250,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IOutboundEndpoint
+### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IVirtualNetworkLink
 
 ## NOTES
 

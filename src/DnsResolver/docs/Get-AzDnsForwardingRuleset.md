@@ -1,57 +1,84 @@
 ---
 external help file:
 Module Name: Az.DnsResolver
-online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/get-azdnsresolveroutboundendpoint
+online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/get-azdnsforwardingruleset
 schema: 2.0.0
 ---
 
-# Get-AzDnsResolverOutboundEndpoint
+# Get-AzDnsForwardingRuleset
 
 ## SYNOPSIS
-Gets properties of an outbound endpoint for a DNS resolver.
+Gets a DNS forwarding ruleset properties.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
-Get-AzDnsResolverOutboundEndpoint -DnsResolverName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-Top <Int32>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzDnsForwardingRuleset [-SubscriptionId <String[]>] [-Top <Int32>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-AzDnsResolverOutboundEndpoint -DnsResolverName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzDnsForwardingRuleset -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-AzDnsResolverOutboundEndpoint -InputObject <IDnsResolverIdentity> [-DefaultProfile <PSObject>]
+Get-AzDnsForwardingRuleset -InputObject <IDnsResolverIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
+### List
+```
+Get-AzDnsForwardingRuleset -ResourceGroupName <String> [-SubscriptionId <String[]>] [-Top <Int32>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Gets properties of an outbound endpoint for a DNS resolver.
+Gets a DNS forwarding ruleset properties.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: List all DNS forwarding rulesets in a subscription
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Get-AzDnsForwardingRuleset -SubscriptionId 0e5a46b1-de0b-4ec3-a5d7-dda908b4e076
 
-{{ Add output here }}
+Location Name                                                            Type                                    Etag
+-------- ----                                                            ----                                    ----
+westus2  dnsForwardingRuleset                                            Microsoft.Network/dnsForwardingRulesets "04005592-0000-0800-0000-60e7ec170000"
+westus2  pw-dnsForwardingRuleset                                         Microsoft.Network/dnsForwardingRulesets "08009ec9-0000-0800-0000-60e383b70000"
+westus2  pw-dnsForwardingRuleset1                                        Microsoft.Network/dnsForwardingRulesets "08007ccc-0000-0800-0000-60e3846a0000"
+eastus2  dnsforwardingruleset-test-eastus2-main-syn-outbound-primary-0   Microsoft.Network/dnsForwardingRulesets "4f006bb2-0000-0200-0000-60e7ef240000"
+eastus2  dnsforwardingruleset-test-eastus2-main-syn-outbound-secondary-0 Microsoft.Network/dnsForwardingRulesets "4f006db2-0000-0200-0000-60e7ef240000"
 ```
 
-{{ Add description here }}
+This command gets all DNS forwarding ruleset under the subscription.
 
-### Example 2: {{ Add title here }}
+### Example 2: Get single DNS forwarding ruleset by name
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\>  Get-AzDnsForwardingRuleset -Name dnsForwardingRuleset -ResourceGroupName sampleRG
 
-{{ Add output here }}
+Location Name                 Type                                    Etag
+-------- ----                 ----                                    ----
+westus2  dnsForwardingRuleset Microsoft.Network/dnsForwardingRulesets "04005592-0000-0800-0000-60e7ec170000"
 ```
 
-{{ Add description here }}
+This command gets single DNS forwarding ruleset by name.
+
+### Example 3: List all DNS forwarding ruleset under the resouce group
+```powershell
+PS C:\>  Get-AzDnsForwardingRuleset -ResourceGroupName sampleRG
+
+Location Name                     Type                                    Etag
+-------- ----                     ----                                    ----
+westus2  dnsForwardingRuleset     Microsoft.Network/dnsForwardingRulesets "04005592-0000-0800-0000-60e7ec170000"
+westus2  pw-dnsForwardingRuleset  Microsoft.Network/dnsForwardingRulesets "08009ec9-0000-0800-0000-60e383b70000"
+westus2  pw-dnsForwardingRuleset1 Microsoft.Network/dnsForwardingRulesets "08007ccc-0000-0800-0000-60e3846a0000"
+```
+
+This command gets all DNS forwarding ruleset under the resouce group.
 
 ## PARAMETERS
 
@@ -64,21 +91,6 @@ Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DnsResolverName
-The name of the DNS resolver.
-
-```yaml
-Type: System.String
-Parameter Sets: Get, List
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -102,12 +114,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the outbound endpoint for the DNS resolver.
+The name of the DNS forwarding ruleset.
 
 ```yaml
 Type: System.String
 Parameter Sets: Get
-Aliases: OutboundEndpointName
+Aliases: DnsForwardingRulesetName
 
 Required: True
 Position: Named
@@ -137,7 +149,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: False
@@ -153,7 +165,7 @@ If not specified, returns up to 100 results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -172,7 +184,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IOutboundEndpoint
+### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IDnsForwardingRuleset
 
 ## NOTES
 
