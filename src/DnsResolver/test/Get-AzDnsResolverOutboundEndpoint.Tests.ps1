@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ."$PSScriptRoot\testDataGenerator.ps1"
 ."$PSScriptRoot\virtualNetworkClient.ps1"
 ."$PSScriptRoot\outboundEndpointAssertions.ps1"
@@ -5,6 +6,8 @@
 
 Add-AssertionOperator -Name 'BeSuccessfullyCreatedOutboundEndpoint' -Test $Function:BeSuccessfullyCreatedOutboundEndpoint
 
+=======
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
 $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
 if (-Not (Test-Path -Path $loadEnvPath)) {
     $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
@@ -19,6 +22,7 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Get-AzDnsResolverOutboundEndpoint' {
+<<<<<<< HEAD
     It 'Get single outbound endpoint by name, expect outbound endpoint by name retrieved' {
         $outboundEndpointName = $env.InboundEndpointNamePrefixForGet0
         $outboundEndpoint =  Get-AzDnsResolverOutboundEndpoint -DnsResolverName $env.DnsResolverNameForInboundEndpointGet -Name $outboundEndpointName -ResourceGroupName $env.ResourceGroupName
@@ -36,3 +40,17 @@ Describe 'Get-AzDnsResolverOutboundEndpoint' {
         $outboundEndpoints.Count | Should -Be $env.NumberOfInboundEndpointForGet
     }
 }
+=======
+    It 'List' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'Get' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'GetViaIdentity' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+}
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193

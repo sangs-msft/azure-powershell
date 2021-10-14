@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
 # ----------------------------------------------------------------------------------
 #
 # Copyright Microsoft Corporation
@@ -17,6 +21,10 @@
 Create a in-memory object for Target DNS server
 .Description
 Create a in-memory object for Target DNS server
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
 .Outputs
 Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.TargetDnsServer
 .Link
@@ -32,7 +40,11 @@ function New-AzDnsResolverTargetDnsServerObject {
         $IPAddress,
         [Parameter(HelpMessage="DNS server port.")]
         [int]
+<<<<<<< HEAD
         $Port = 53
+=======
+        $Port
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
     )
 
     process {
@@ -42,4 +54,9 @@ function New-AzDnsResolverTargetDnsServerObject {
         $Object.Port = $Port
         return $Object
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193

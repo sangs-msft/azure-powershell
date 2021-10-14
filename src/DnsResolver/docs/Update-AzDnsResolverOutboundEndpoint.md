@@ -31,23 +31,28 @@ Updates an outbound endpoint for a DNS resolver.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Update Outbound Endpoint by name (adding metadata)
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Update-AzDnsResolverOutboundEndpoint -DnsResolverName sampleResolver -Name sampleOutbound -ResourceGroupName sampleResourceGroup -Metadata @{"value0" = "value1"}
 
-{{ Add output here }}
+Name         Type                                             Etag
+----         ----                                             ----
+sampleOutbound Microsoft.Network/dnsResolvers/outboundEndpoints "02001eab-0000-0800-0000-60e792500000"
 ```
 
-{{ Add description here }}
+This command updates Outbound Endpoint by name (adding metadata)
 
-### Example 2: {{ Add title here }}
+### Example 2: Update Outbound Endpoint via identity (adding metadata)
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> $inputObject = Get-AzDnsResolverOutboundEndpoint -DnsResolverName sampleResolver -Name sampleOutbound -ResourceGroupName sampleResourceGroup
+PS C:\> Update-AzDnsResolverOutboundEndpoint -InputObject $inputObject -Metadata @{"value0" = "value1"}
 
-{{ Add output here }}
+Name         Type                                             Etag
+----         ----                                             ----
+sampleOutbound Microsoft.Network/dnsResolvers/outboundEndpoints "02001eab-0000-0800-0000-60e792500000"
 ```
 
-{{ Add description here }}
+This command updates Outbound Endpoint via identity (adding metadata)
 
 ## PARAMETERS
 
@@ -266,7 +271,6 @@ INPUTOBJECT <IDnsResolverIdentity>: Identity Parameter
   - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
   - `[SubscriptionId <String>]`: The ID of the target subscription.
   - `[VirtualNetworkLinkName <String>]`: The name of the virtual network link.
-  - `[VirtualNetworkName <String>]`: The name of the virtual network.
 
 ## RELATED LINKS
 

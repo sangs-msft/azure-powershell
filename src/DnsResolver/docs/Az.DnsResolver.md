@@ -23,12 +23,19 @@ Gets properties of a virtual network link to a DNS forwarding ruleset.
 ### [Get-AzDnsResolver](Get-AzDnsResolver.md)
 Gets properties of a DNS resolver.
 
+### [Get-AzDnsResolverDnsForwardingRuleset](Get-AzDnsResolverDnsForwardingRuleset.md)
+Gets a DNS forwarding ruleset properties.
+
+### [Get-AzDnsResolverForwardingRule](Get-AzDnsResolverForwardingRule.md)
+Gets properties of a forwarding rule in a DNS forwarding ruleset.
+
 ### [Get-AzDnsResolverInboundEndpoint](Get-AzDnsResolverInboundEndpoint.md)
 Gets properties of an inbound endpoint for a DNS resolver.
 
 ### [Get-AzDnsResolverOutboundEndpoint](Get-AzDnsResolverOutboundEndpoint.md)
 Gets properties of an outbound endpoint for a DNS resolver.
 
+<<<<<<< HEAD
 ### [New-AzDnsForwardingRuleset](New-AzDnsForwardingRuleset.md)
 Creates or updates a DNS forwarding ruleset.
 
@@ -37,9 +44,19 @@ Creates or updates a forwarding rule in a DNS forwarding ruleset.
 
 ### [New-AzDnsForwardingRulesetVirtualNetworkLink](New-AzDnsForwardingRulesetVirtualNetworkLink.md)
 Creates or updates a virtual network link to a DNS forwarding ruleset.
+=======
+### [Get-AzDnsResolverVirtualNetworkLink](Get-AzDnsResolverVirtualNetworkLink.md)
+Gets properties of a virtual network link to a DNS forwarding ruleset.
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
 
 ### [New-AzDnsResolver](New-AzDnsResolver.md)
 Creates or updates a DNS resolver.
+
+### [New-AzDnsResolverDnsForwardingRuleset](New-AzDnsResolverDnsForwardingRuleset.md)
+Creates or updates a DNS forwarding ruleset.
+
+### [New-AzDnsResolverForwardingRule](New-AzDnsResolverForwardingRule.md)
+Creates or updates a forwarding rule in a DNS forwarding ruleset.
 
 ### [New-AzDnsResolverInboundEndpoint](New-AzDnsResolverInboundEndpoint.md)
 Creates or updates an inbound endpoint for a DNS resolver.
@@ -53,6 +70,7 @@ Creates or updates an outbound endpoint for a DNS resolver.
 ### [New-AzDnsResolverTargetDnsServerObject](New-AzDnsResolverTargetDnsServerObject.md)
 Create a in-memory object for Target DNS server
 
+<<<<<<< HEAD
 ### [Remove-AzDnsForwardingRuleset](Remove-AzDnsForwardingRuleset.md)
 Deletes a DNS forwarding ruleset.
 WARNING: This operation cannot be undone.
@@ -65,9 +83,22 @@ WARNING: This operation cannot be undone.
 ### [Remove-AzDnsForwardingRulesetVirtualNetworkLink](Remove-AzDnsForwardingRulesetVirtualNetworkLink.md)
 Deletes a virtual network link to a DNS forwarding ruleset.
 WARNING: This operation cannot be undone.
+=======
+### [New-AzDnsResolverVirtualNetworkLink](New-AzDnsResolverVirtualNetworkLink.md)
+Creates or updates a virtual network link to a DNS forwarding ruleset.
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
 
 ### [Remove-AzDnsResolver](Remove-AzDnsResolver.md)
 Deletes a DNS resolver.
+WARNING: This operation cannot be undone.
+
+### [Remove-AzDnsResolverDnsForwardingRuleset](Remove-AzDnsResolverDnsForwardingRuleset.md)
+Deletes a DNS forwarding ruleset.
+WARNING: This operation cannot be undone.
+All forwarding rules within the ruleset will be deleted.
+
+### [Remove-AzDnsResolverForwardingRule](Remove-AzDnsResolverForwardingRule.md)
+Deletes a forwarding rule in a DNS forwarding ruleset.
 WARNING: This operation cannot be undone.
 
 ### [Remove-AzDnsResolverInboundEndpoint](Remove-AzDnsResolverInboundEndpoint.md)
@@ -78,6 +109,7 @@ WARNING: This operation cannot be undone.
 Deletes an outbound endpoint for a DNS resolver.
 WARNING: This operation cannot be undone.
 
+<<<<<<< HEAD
 ### [Update-AzDnsForwardingRuleset](Update-AzDnsForwardingRuleset.md)
 Updates a DNS forwarding ruleset.
 
@@ -86,9 +118,20 @@ Updates a forwarding rule in a DNS forwarding ruleset.
 
 ### [Update-AzDnsForwardingRulesetVirtualNetworkLink](Update-AzDnsForwardingRulesetVirtualNetworkLink.md)
 Updates a virtual network link to a DNS forwarding ruleset.
+=======
+### [Remove-AzDnsResolverVirtualNetworkLink](Remove-AzDnsResolverVirtualNetworkLink.md)
+Deletes a virtual network link to a DNS forwarding ruleset.
+WARNING: This operation cannot be undone.
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
 
 ### [Update-AzDnsResolver](Update-AzDnsResolver.md)
 Updates a DNS resolver.
+
+### [Update-AzDnsResolverDnsForwardingRuleset](Update-AzDnsResolverDnsForwardingRuleset.md)
+Updates a DNS forwarding ruleset.
+
+### [Update-AzDnsResolverForwardingRule](Update-AzDnsResolverForwardingRule.md)
+Updates a forwarding rule in a DNS forwarding ruleset.
 
 ### [Update-AzDnsResolverInboundEndpoint](Update-AzDnsResolverInboundEndpoint.md)
 Updates an inbound endpoint for a DNS resolver.
@@ -96,3 +139,9 @@ Updates an inbound endpoint for a DNS resolver.
 ### [Update-AzDnsResolverOutboundEndpoint](Update-AzDnsResolverOutboundEndpoint.md)
 Updates an outbound endpoint for a DNS resolver.
 
+<<<<<<< HEAD
+=======
+### [Update-AzDnsResolverVirtualNetworkLink](Update-AzDnsResolverVirtualNetworkLink.md)
+Updates a virtual network link to a DNS forwarding ruleset.
+
+>>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193

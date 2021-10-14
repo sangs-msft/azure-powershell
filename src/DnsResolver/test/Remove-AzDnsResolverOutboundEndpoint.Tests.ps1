@@ -53,5 +53,4 @@ Describe 'Remove-AzDnsResolverOutboundEndpoint' {
         $resolver = Get-AzDnsResolverOutboundEndpoint -DnsResolverName $dnsResolverName -Name $outboundEndpointName -ResourceGroupName $env.ResourceGroupName
         $resolver| Should -BeSuccessfullyCreated
     }
-
 }
