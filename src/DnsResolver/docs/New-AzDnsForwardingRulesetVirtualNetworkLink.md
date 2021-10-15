@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Az.DnsResolver
-online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/new-azdnsresolvervirtualnetworklink
+online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/new-azdnsforwardingrulesetvirtualnetworklink
 schema: 2.0.0
 ---
 
-# New-AzDnsResolverVirtualNetworkLink
+# New-AzDnsForwardingRulesetVirtualNetworkLink
 
 ## SYNOPSIS
 Creates or updates a virtual network link to a DNS forwarding ruleset.
@@ -13,7 +13,7 @@ Creates or updates a virtual network link to a DNS forwarding ruleset.
 ## SYNTAX
 
 ```
-New-AzDnsResolverVirtualNetworkLink -DnsForwardingRulesetName <String> -Name <String>
+New-AzDnsForwardingRulesetVirtualNetworkLink -DnsForwardingRulesetName <String> -Name <String>
  -ResourceGroupName <String> [-SubscriptionId <String>] [-IfMatch <String>] [-IfNoneMatch <String>]
  [-Metadata <Hashtable>] [-VirtualNetworkId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,27 +23,28 @@ New-AzDnsResolverVirtualNetworkLink -DnsForwardingRulesetName <String> -Name <St
 Creates or updates a virtual network link to a DNS forwarding ruleset.
 
 ## EXAMPLES
+<<<<<<< HEAD:src/DnsResolver/docs/New-AzDnsResolverVirtualNetworkLink.md
 ### Example 1: Create a virtual network link 
-```powershell
-PS C:\> New-AzDnsResolverVirtualNetworkLink -DnsForwardingRulesetName dnsForwardingRuleset -Name sampleVnetLink -ResourceGroupName sampleRG -VirtualNetworkId "/subscriptions/ea40042d-63d8-4d02-9261-fb31450e6c64/resourceGroups/sampleRG/providers/Microsoft.Network/virtualNetworks/vnet-hub"
+=======
 
-Location Name                   Type                                             Etag
--------- ----                   ----                                             ----
-westus2  sampleVnetLink Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks "0a009902-0000-0800-0000-60e378030000"
+### Example 1: {{ Add title here }}
+>>>>>>> c3ea36fb43... made some changes:src/DnsResolver/docs/New-AzDnsForwardingRulesetVirtualNetworkLink.md
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
 
-This cmdlet creates a virtual network link.
+{{ Add description here }}
 
-### Example 2: Create a virtual network link with metadata
+### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> New-AzDnsResolverVirtualNetworkLink -DnsForwardingRulesetName dnsForwardingRuleset -Name sampleVnetLink -ResourceGroupName sampleRG -VirtualNetworkId "/subscriptions/ea40042d-63d8-4d02-9261-fb31450e6c64/resourceGroups/sampleRG/providers/Microsoft.Network/virtualNetworks/vnet-hub" -Metadata @{"key0" = "value0"}
+PS C:\> {{ Add code here }}
 
-Location Name                   Type                                             Etag
--------- ----                   ----                                             ----
-westus2  sampleVnetLink Microsoft.Network/dnsForwardingRulesets/virtualNetworkLinks "0a009902-0000-0800-0000-60e378030000"
+{{ Add output here }}
 ```
 
-This cmdlet creates a virtual network link with metadata.
+{{ Add description here }}
 
 ## PARAMETERS
 

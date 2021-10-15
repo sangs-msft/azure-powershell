@@ -1,53 +1,53 @@
 ---
 external help file:
 Module Name: Az.DnsResolver
-online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/remove-azdnsresolverdnsforwardingruleset
+online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/update-azdnsforwardingrulesetvirtualnetworklink
 schema: 2.0.0
 ---
 
-# Remove-AzDnsResolverDnsForwardingRuleset
+# Update-AzDnsForwardingRulesetVirtualNetworkLink
 
 ## SYNOPSIS
-Deletes a DNS forwarding ruleset.
-WARNING: This operation cannot be undone.
-All forwarding rules within the ruleset will be deleted.
+Updates a virtual network link to a DNS forwarding ruleset.
 
 ## SYNTAX
 
-### Delete (Default)
+### UpdateExpanded (Default)
 ```
-Remove-AzDnsResolverDnsForwardingRuleset -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-IfMatch <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf]
+Update-AzDnsForwardingRulesetVirtualNetworkLink -DnsForwardingRulesetName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-IfMatch <String>] [-Metadata <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-AzDnsForwardingRulesetVirtualNetworkLink -InputObject <IDnsResolverIdentity> [-IfMatch <String>]
+ [-Metadata <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
-```
-Remove-AzDnsResolverDnsForwardingRuleset -InputObject <IDnsResolverIdentity> [-IfMatch <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Deletes a DNS forwarding ruleset.
-WARNING: This operation cannot be undone.
-All forwarding rules within the ruleset will be deleted.
+Updates a virtual network link to a DNS forwarding ruleset.
 
 ## EXAMPLES
-### Example 1: Remove an DNS forwarding ruleset by name.
-```powershell
-PS C:\> Remove-AzDnsResolverDnsForwardingRuleset -Name dnsForwardingRulset -ResourceGroupName sampleRG
 
+### Example 1: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
 
-This command removes a DNS forwarding ruleset by name.
+{{ Add description here }}
 
-### Example 2: Remove a DNS forwarding ruleset by identity
+### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> $dnsResolverDnsForwardingRulesetObject = Get-AzDnsResolverDnsForwardingRuleset -Name dnsForwardingRuleset -ResourceGroupName sampleRG
-PS C:\> Remove-AzDnsResolverDnsForwardingRuleset -InputObject $dnsResolverDnsForwardingRulesetObject 
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
 
-This command removes a DNS forwarding ruleset by identity.
+{{ Add description here }}
 
 ## PARAMETERS
 
@@ -81,6 +81,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DnsForwardingRulesetName
+The name of the DNS forwarding ruleset.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IfMatch
 ETag of the resource.
 Omit this value to always overwrite the current resource.
@@ -104,7 +119,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.IDnsResolverIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -114,13 +129,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Metadata
+Metadata attached to the virtual network link.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
-The name of the DNS forwarding ruleset.
+The name of the virtual network link.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: DnsForwardingRulesetName
+Parameter Sets: UpdateExpanded
+Aliases: VirtualNetworkLinkName
 
 Required: True
 Position: Named
@@ -144,28 +174,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 The name of the resource group.
 The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -180,7 +195,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -230,7 +245,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IVirtualNetworkLink
 
 ## NOTES
 

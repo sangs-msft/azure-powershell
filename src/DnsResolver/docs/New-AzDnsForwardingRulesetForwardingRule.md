@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Az.DnsResolver
-online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/new-azdnsresolverforwardingrule
+online version: https://docs.microsoft.com/powershell/module/az.dnsresolver/new-azdnsforwardingrulesetforwardingrule
 schema: 2.0.0
 ---
 
-# New-AzDnsResolverForwardingRule
+# New-AzDnsForwardingRulesetForwardingRule
 
 ## SYNOPSIS
 Creates or updates a forwarding rule in a DNS forwarding ruleset.
@@ -13,6 +13,7 @@ Creates or updates a forwarding rule in a DNS forwarding ruleset.
 ## SYNTAX
 
 ```
+<<<<<<< HEAD:src/DnsResolver/docs/New-AzDnsResolverForwardingRule.md
 New-AzDnsResolverForwardingRule -DnsForwardingRulesetName <String> -Name <String> -ResourceGroupName <String>
 <<<<<<< HEAD
  [-SubscriptionId <String>] [-IfMatch <String>] [-IfNoneMatch <String>] [-DomainName <String>]
@@ -21,6 +22,13 @@ New-AzDnsResolverForwardingRule -DnsForwardingRulesetName <String> -Name <String
 >>>>>>> 2935e5fc9cb77a0d10c6bd977239c21938094193
  [-ForwardingRuleState <ForwardingRuleState>] [-Metadata <Hashtable>] [-TargetDnsServer <ITargetDnsServer[]>]
  [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+=======
+New-AzDnsForwardingRulesetForwardingRule -DnsForwardingRulesetName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-IfMatch <String>] [-IfNoneMatch <String>]
+ [-DomainName <String>] [-ForwardingRuleState <ForwardingRuleState>] [-Metadata <Hashtable>]
+ [-TargetDnsServer <ITargetDnsServer[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+>>>>>>> c3ea36fb43... made some changes:src/DnsResolver/docs/New-AzDnsForwardingRulesetForwardingRule.md
 ```
 
 ## DESCRIPTION
@@ -28,29 +36,23 @@ Creates or updates a forwarding rule in a DNS forwarding ruleset.
 
 ## EXAMPLES
 
-### Example 1: Create a forwarding rule.
+### Example 1: {{ Add title here }}
 ```powershell
-PS C:\> $targetIPConfig = New-AzDnsResolverIPConfigurationObject -PrivateIPAddress 10.0.0.3 -PrivateIPAllocationMethod Dynamic -SubnetId /subscriptions/ea40042d-63d8-4d02-9261-fb31450e6c67/resourceGroups/sampleRG/providers/Microsoft.Network/virtualNetworks/vnet-hub/subnets/test-subnet
-PS C:\> New-AzDnsResolverForwardingRule -DnsForwardingRulesetName dnsForwardingRuleset -Name sampleForwardingRule -ResourceGroupName sampleRG -TargetDnsServer $targetIPConfig
+PS C:\> {{ Add code here }}
 
-Name                  Type                                            Etag
-----                  ----                                            ----
-sampleForwardingRule Microsoft.Network/dnsForwardingRuleset/forwardingRule "0b008451-0000-0800-0000-60402b960000"
+{{ Add output here }}
 ```
 
-This cmdlet creates a forwarding rule.
+{{ Add description here }}
 
-### Example 2: Create a forwarding rule with tag 
+### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> $targetIPConfig = New-AzDnsResolverIPConfigurationObject -PrivateIPAddress 10.0.0.3 -PrivateIPAllocationMethod Dynamic -SubnetId /subscriptions/ea40042d-63d8-4d02-9261-fb31450e6c67/resourceGroups/sampleRG/providers/Microsoft.Network/virtualNetworks/vnet-hub/subnets/test-subnet
-PS C:\> New-AzDnsResolverForwardingRule -DnsForwardingRulesetName dnsForwardingRuleset -Name sampleForwardingRule -ResourceGroupName sampleRG -TargetDnsServer $targetIPConfig -Metadata @{"key0" = "value0"}
+PS C:\> {{ Add code here }}
 
-Name                  Type                                            Etag
-----                  ----                                            ----
-sampleForwardingRule Microsoft.Network/dnsForwardingRuleset/forwardingRule "0b008451-0000-0800-0000-60402b960000"
+{{ Add output here }}
 ```
 
-This cmdlet creates a forwarding rule with tag.
+{{ Add description here }}
 
 ## PARAMETERS
 
